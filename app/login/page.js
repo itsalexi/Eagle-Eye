@@ -2,15 +2,18 @@
 
 import { Button } from '@/components/ui/button';
 import { auth, googleAuthProvider } from '@/lib/firebase';
-import { UserContext } from '@/lib/context';
-import { useContext } from 'react';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 export default function Login() {
-    const { user } = useContext(UserContext);
+    const [user] = useAuthState(auth);
 
     const signInWithGoogle = async () => {
         try {
-            await auth.signInWithPopup(googleAuthProvider);
+            const result = await auth.signInWithPopup(googleAuthProvider);
+            const email = result.user.email;
+            const regex = /@[\w-]+\.ateneo\.edu$/;
+            if (!regex.test(email)) {
+                await auth.signOut();
+            }
         } catch (err) {
             console.log(err);
         }
@@ -19,7 +22,10 @@ export default function Login() {
     return (
         <div className="login-page">
             {user ? (
-                <div>You are logged in</div>
+                <div>
+                    <p>You are logged in.</p>
+                    <Button onClick={() => auth.signOut()}>Sign out</Button>
+                </div>
             ) : (
                 <div className="login-box">
                     <div className="login-top">
@@ -28,7 +34,7 @@ export default function Login() {
                         </h2>
                         <p className="text-sm text-gray-500">
                             You can only login with your Ateneo account
-                            (*.ateneo.edu)
+                            (@*.ateneo.edu)
                         </p>
                     </div>
                     <hr />
