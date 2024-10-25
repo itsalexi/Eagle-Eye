@@ -3,9 +3,15 @@
 import { Button } from '@/components/ui/button';
 import { auth, googleAuthProvider } from '@/lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import Header from '@/components/header';
+import LoginForeground from '@/assets/login_foreground.webp';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Login() {
+    const [error, setError] = useState(null);
+    const router = useRouter();
+
     const [user] = useAuthState(auth);
 
     const signInWithGoogle = async () => {
@@ -14,10 +20,13 @@ export default function Login() {
             const email = result.user.email;
             const regex = /@[\w-]+\.ateneo\.edu$/;
             if (!regex.test(email)) {
+                setError('You did not sign in with an Ateneo email.');
                 await auth.signOut();
+            } else {
+                router.push('/');
             }
         } catch (err) {
-            console.log(err);
+            setError(err);
         }
     };
 
@@ -30,6 +39,12 @@ export default function Login() {
                 </div>
             ) : (
                 <div className="login-box">
+                    <Image
+                        src={LoginForeground}
+                        alt={'login foreground'}
+                        height={250}
+                        width={250}
+                    />
                     <div className="login-top">
                         <h2 className="text-2xl font-semibold mb-2">
                             Create an account
@@ -38,6 +53,11 @@ export default function Login() {
                             You can only login with your Ateneo account
                             (@*.ateneo.edu)
                         </p>
+                        {error ? (
+                            <p className="text-red-600">Error: {error}</p>
+                        ) : (
+                            ''
+                        )}
                     </div>
                     <hr />
 

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import '@/style/layout.css';
 import Image from 'next/image';
-import Logo from '@/assets/logo.png';
+import Logo from '@/assets/logo.webp';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
     DropdownMenu,
@@ -16,9 +16,11 @@ import { LogOut, User, FileText } from 'lucide-react';
 import { Button } from './ui/button';
 import { auth } from '@/lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useRouter } from 'next/navigation';
 
 export const Header = () => {
     const [user] = useAuthState(auth);
+    const router = useRouter();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -48,27 +50,27 @@ export const Header = () => {
                 </div>
             </div>
             <div className="right-header">
-                <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-                    <DropdownMenuTrigger asChild>
-                        <Button
-                            variant="ghost"
-                            className="relative h-8 w-8 rounded-full"
+                {user ? (
+                    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+                        <DropdownMenuTrigger asChild>
+                            <Button
+                                variant="ghost"
+                                className="relative h-8 w-8 rounded-full"
+                            >
+                                <Avatar className="h-10 w-10">
+                                    <AvatarImage
+                                        src="https://github.com/shadcn.png"
+                                        alt="User avatar"
+                                    />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                            className="w-56"
+                            align="end"
+                            forceMount
                         >
-                            <Avatar className="h-10 w-10">
-                                <AvatarImage
-                                    src="https://github.com/shadcn.png"
-                                    alt="User avatar"
-                                />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                        className="w-56"
-                        align="end"
-                        forceMount
-                    >
-                        {user ? (
                             <>
                                 <DropdownMenuLabel>Hi, user!</DropdownMenuLabel>
                                 <DropdownMenuItem
@@ -85,20 +87,11 @@ export const Header = () => {
                                     <span>Log out</span>
                                 </DropdownMenuItem>
                             </>
-                        ) : (
-                            <>
-                                <DropdownMenuLabel>
-                                    You are not logged in
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem onClick={handleLogout}>
-                                    <LogOut className="mr-2 h-4 w-4" />
-                                    <span>Log in</span>
-                                </DropdownMenuItem>
-                            </>
-                        )}
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                ) : (
+                    <Button onClick={() => router.push('/login')}>Login</Button>
+                )}
             </div>
         </header>
     );
