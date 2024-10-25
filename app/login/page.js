@@ -3,6 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { auth, googleAuthProvider } from '@/lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Header from '@/components/header';
+
 export default function Login() {
     const [user] = useAuthState(auth);
 
@@ -20,7 +22,7 @@ export default function Login() {
     };
 
     return (
-        <div className="login-page">
+        <div className="login-page m-3">
             {user ? (
                 <div>
                     <p>You are logged in.</p>
@@ -32,7 +34,7 @@ export default function Login() {
                         <h2 className="text-2xl font-semibold mb-2">
                             Create an account
                         </h2>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-gray-500 text-center">
                             You can only login with your Ateneo account
                             (@*.ateneo.edu)
                         </p>
