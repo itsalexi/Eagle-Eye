@@ -1,8 +1,9 @@
 'use client';
 
-import Hashtag from '@/components/hashtag';
+import TrendingHashtags from '@/components/trendingHashtags';
 import Message from '@/components/message';
 import SearchTags from '@/components/searchtags';
+
 import { useState } from 'react';
 import '@/style/layout.css';
 
@@ -208,22 +209,6 @@ export default function Home() {
         },
     ];
 
-    const getTopTrendingHashtags = (messages, amount) => {
-        const hashtagCounts = {};
-
-        messages.forEach((msg) => {
-            msg.hashtags.forEach((tag) => {
-                hashtagCounts[tag] = (hashtagCounts[tag] || 0) + 1;
-            });
-        });
-        const trendingHashtags = Object.entries(hashtagCounts)
-            .sort((a, b) => b[1] - a[1]) // Sort by count
-            .slice(0, amount) // Take the top N entries
-            .map((entry) => entry[0]); // Extract just the hashtag
-
-        return trendingHashtags;
-    };
-
     const getFilteredMessages = (messages, selectedTags) => {
         if (selectedTags.length == 0) return messages;
         return messages.filter((message) =>
@@ -231,11 +216,8 @@ export default function Home() {
         );
     };
 
-    const trending_hashtags = getTopTrendingHashtags(messages, 6);
-
     const [selectedHashtags, setSelectedHashtags] = useState([]);
     const handleHashtag = (text) => {
-        console.log(text);
         if (selectedHashtags.includes(text)) {
             setSelectedHashtags(
                 selectedHashtags.filter((hashtag) => hashtag !== text)
@@ -253,14 +235,12 @@ export default function Home() {
         <div className="flex flex-row ml-5 home-page">
             <div className="flex flex-row">
                 <div className="trending-hashtags">
-                    {trending_hashtags.map((hashtag) => (
-                        <Hashtag
-                            onClick={() => handleHashtag(hashtag)}
-                            key={`${hashtag}_hashtag`}
-                            text={`#${hashtag}`}
-                            isSelected={selectedHashtags.includes(hashtag)}
-                        />
-                    ))}
+                    <TrendingHashtags
+                        messages={messages}
+                        amount={6}
+                        onClick={handleHashtag}
+                        selectedHashtags={selectedHashtags}
+                    />
                 </div>
                 <div className="search">
                     <SearchTags
