@@ -6,7 +6,16 @@ import { Textarea } from '@/components/ui/textarea';
 import '@/style/layout.css';
 
 export default function Create() {
-    const trending_hashtags = ['SEC A', 'Gonz', 'Xavier', 'Iggys'];
+    const trending_hashtags = [
+        'SEC A',
+        'Gonz',
+        'Xavier',
+        'Iggys',
+        'MVP',
+        'Blue Eagle Gym',
+        'Zen Garden',
+        'Bel Field',
+    ];
     const [selectedHashtags, setSelectedHashtags] = useState([]);
 
     const handleHashtag = (text) => {
