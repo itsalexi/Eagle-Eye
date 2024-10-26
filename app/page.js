@@ -251,7 +251,7 @@ export default function Home() {
 
     return (
         <div className="flex flex-row ml-5 home-page">
-            <div className="flex flex-row">
+            <div className="flex flex-row h-20 bg-blue">
                 <div className="trending-hashtags">
                     {trending_hashtags.map((hashtag) => (
                         <Hashtag
@@ -271,6 +271,7 @@ export default function Home() {
             </div>
 
             <div className="messages-list">
+                <p className="text-6xl font-bold mb-[1rem]"> Recents</p>
                 {getFilteredMessages(messages, selectedHashtags)?.map((msg) => (
                     <Message
                         key={msg.postId}

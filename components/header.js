@@ -17,6 +17,7 @@ import { Button } from './ui/button';
 import { auth } from '@/lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
+import { Plus } from 'lucide-react';
 
 export const Header = () => {
     const [user] = useAuthState(auth);
@@ -40,6 +41,15 @@ export const Header = () => {
                 </div>
             </div>
             <div className="right-header">
+                <Plus />
+                <p className="underline mr-2"
+                    onClick={() => {
+                        router.push('/create');
+                    }}
+                    style={{ cursor: 'pointer' }}
+                >
+                    Create
+                </p>
                 {user ? (
                     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
                         <DropdownMenuTrigger asChild>
