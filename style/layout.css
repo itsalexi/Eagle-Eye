@@ -82,8 +82,8 @@
 .message-top {
     display: flex;
 }
-.searchtags{
-    width: 20%;
+.search{
+    width: 30%;
     height: 100%;
-
+    margin-left: 15em;
 }
