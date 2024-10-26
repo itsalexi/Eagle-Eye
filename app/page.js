@@ -8,7 +8,7 @@ export default function Home() {
         {
             postId: 1,
             timestamp: 1729910701000,
-            message: 'tite',
+            message: 'hello',
             comments: [],
             likes: 15,
             dislikes: 3,

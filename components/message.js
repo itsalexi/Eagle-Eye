@@ -39,7 +39,7 @@ export default function Message({ msgObject, highlighted }) {
                             key={index}
                             className={`rounded-full text-xs p-2 border-2 ${
                                 highlighted.includes(tag)
-                                    ? 'bg-black text-white'
+                                    ? 'bg-black text-white border-black'
                                     : 'bg-white text-black border-[#cfcfd0]'
                             }`}
                         >
