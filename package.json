@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coreui/coreui": "^5.1.2",
+    "@coreui/react": "^5.4.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.5",
@@ -26,7 +28,8 @@
     "react-dom": "^18",
     "react-firebase-hooks": "^5.1.1",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "ui-patterns": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -2,6 +2,7 @@
 
 import Hashtag from '@/components/hashtag';
 import Message from '@/components/message';
+import SearchTags from '@/components/searchtags'
 import { useState } from 'react';
 export default function Home() {
     const messages = [
@@ -38,15 +39,16 @@ export default function Home() {
     };
 
     return (
-        <div className="flex flex-row ml-10 home-page">
-            <div className="trending-hashtags">
-                {trending_hashtags.map((hashtag) => (
-                    <Hashtag
-                        onClick={() => handleHashtag(hashtag)}
-                        key={`${hashtag}_hashtag`}
-                        text={`#${hashtag}`}
-                    />
-                ))}
+            <div className="flex flex-row ml-10 home-page">
+                <div className="trending-hashtags">
+                    {trending_hashtags.map((hashtag) => (
+                        <Hashtag
+                            onClick={() => handleHashtag(hashtag)}
+                            key={`${hashtag}_hashtag`}
+                            text={`#${hashtag}`}
+                        />
+                    ))}
+                <SearchTags />
             </div>
 
             <div className="messages-list">

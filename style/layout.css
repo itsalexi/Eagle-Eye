@@ -81,5 +81,9 @@
 
 .message-top {
     display: flex;
-    justify-content: space-between;
+}
+.searchtags{
+    width: 20%;
+    height: 100%;
+
 }
