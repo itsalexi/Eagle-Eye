@@ -8,7 +8,7 @@ export default function SearchTags() {
   return (
     <Autocomplete
       multiple
-      id="tags-outlined"
+      id="tags-standard"
       options={top100Films}
       getOptionLabel={(option) => option.title}
       defaultValue={[top100Films[13]]}
@@ -17,6 +17,7 @@ export default function SearchTags() {
       renderInput={(params) => (
         <TextField
           {...params}
+          variant="standard"
           label="Find Hashtags..."
           placeholder=""
         />

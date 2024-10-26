@@ -87,3 +87,30 @@
     height: 100%;
     margin-left: 15em;
 }
+.front-create{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+.create-title{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.tags{
+    display: flex;
+    flex-direction: column;
+}
+.trending-tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+}
+.trending-tags > p{
+    margin-left: 1rem; 
+}
+.search-create{
+    width: 30%;
+    height: 100%;
+}

@@ -2,7 +2,7 @@
 
 import Hashtag from '@/components/hashtag';
 import Message from '@/components/message';
-import SearchTags from '@/components/searchtags'
+import SearchTags from '@/components/searchtags';
 import { useState } from 'react';
 import '@/style/layout.css';
 
