@@ -99,3 +99,12 @@ hr {
     align-items: center;
     flex-direction: column;
 }
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-hashtags {
+    display: flex;
+}

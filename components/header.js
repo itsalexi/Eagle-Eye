@@ -24,16 +24,6 @@ export const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleLogout = () => {
-        // Implement logout logic here
-        console.log('Logging out...');
-    };
-
-    const handleViewSubmissions = () => {
-        // Implement view submissions logic here
-        console.log('Viewing submissions...');
-    };
-
     return (
         <header className="m-3 header">
             <div className="left-header">
@@ -73,9 +63,7 @@ export const Header = () => {
                         >
                             <>
                                 <DropdownMenuLabel>Hi, user!</DropdownMenuLabel>
-                                <DropdownMenuItem
-                                    onClick={handleViewSubmissions}
-                                >
+                                <DropdownMenuItem>
                                     <FileText className="mr-2 h-4 w-4" />
                                     <span>View Submissions</span>
                                 </DropdownMenuItem>
