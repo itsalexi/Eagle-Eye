@@ -114,3 +114,12 @@
     width: 30%;
     height: 100%;
 }
+.messeage-create{
+    width: 95%;
+    height: 30vh;
+    margin-top: 1em;
+}
+.post-create{
+    width: 95%;
+    height: 10vh;
+}

@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import Hashtag from '@/components/hashtag';
 import SearchTags from '@/components/searchtags';
+import { Textarea } from "@/components/ui/textarea"
 import '@/style/layout.css';
 
 export default function Create(){
-
     const trending_hashtags = [
         'SEC A',
         'justice',
@@ -48,6 +48,16 @@ export default function Create(){
                     <SearchTags />
                 </div>
                 </div>
+            </div>
+            <div className='messeage-create'>
+                <Textarea className='h-full'/>
+            </div>
+            <div className='post-create'>
+                <button
+                    className='rounded-full float-right m-[0.5rem] px-4 py-2 border-2 $ bg-black text-white border-black'
+                >
+                    Post
+                </button>
             </div>
         </div>
     );
