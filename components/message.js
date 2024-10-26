@@ -1,7 +1,7 @@
 import { ThumbsUp, ThumbsDown, MessageSquare } from 'lucide-react';
 
 export default function Message({ msgObject, highlighted }) {
-    const { postId, timestamp, message, comments, likes, dislikes, hashtags } =
+    const { timestamp, message, comments, likes, dislikes, hashtags } =
         msgObject;
 
     const formatTimestamp = (timestamp) => {

@@ -40,6 +40,10 @@ export default function Home() {
         }
     };
 
+    const handleSearchTagsChange = (newTags) => {
+        setSelectedHashtags(newTags);
+    };
+
     return (
         <div className="flex flex-row ml-5 home-page">
             <div className="flex flex-row">
@@ -49,11 +53,15 @@ export default function Home() {
                             onClick={() => handleHashtag(hashtag)}
                             key={`${hashtag}_hashtag`}
                             text={`#${hashtag}`}
+                            isSelected={selectedHashtags.includes(hashtag)}
                         />
                     ))}
                 </div>
-                <div className='search'>
-                    <SearchTags />
+                <div className="search">
+                    <SearchTags
+                        selectedTags={selectedHashtags}
+                        onTagsChange={handleSearchTagsChange}
+                    />
                 </div>
             </div>
 

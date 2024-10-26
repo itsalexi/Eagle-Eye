@@ -108,3 +108,7 @@ hr {
 .trending-hashtags {
     display: flex;
 }
+
+.message-top {
+    justify-content: space-between;
+}
