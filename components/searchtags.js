@@ -33,4 +33,11 @@ const top100Films = [
   { title: 'Gonz', year: 1994 },
   { title: 'Xavier', year: 1994 },
   { title: 'Iggys', year: 1994 },
+  { title: 'Education', year: 1994 },
+  { title: 'Freedom', year: 1994 },
+  { title: 'SEC A', year: 1994 },
+  { title: 'Justice', year: 1994 },
+  { title: 'Gonz', year: 1994 },
+  { title: 'Xavier', year: 1994 },
+  { title: 'Iggys', year: 1994 },
 ];
