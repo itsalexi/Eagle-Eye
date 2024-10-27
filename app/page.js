@@ -37,6 +37,7 @@ export default function Home() {
 
     return (
         <div className="flex flex-row ml-5 home-page">
+            <p className='text-[#cfcfd0] ml-2'>Trending Tags...</p>
             <div className=" w-[95%] flex md:flex-row flex-col justify-between">
                 <div className="trending-hashtags">
                     <TrendingHashtags

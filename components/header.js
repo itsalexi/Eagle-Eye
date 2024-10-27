@@ -28,25 +28,22 @@ export const Header = () => {
     return (
         <header className="m-3 header">
             <div
-                className="left-header cursor-pointer"
+                className="left-header cursor-pointer flex items-center"
                 onClick={() => router.push('/')}
             >
                 <div className="logo-container">
                     <Image
                         src={Logo}
-                        width={100}
-                        height={100}
                         alt="logo"
                     ></Image>
                 </div>
                 <div className="logo-name">
-                    <h2 className="text-3xl font-bold">Eagle Eye</h2>
+                    <h2 className="text-3xl font-bold text-white sm:text-black">Eagle Eye</h2>
                 </div>
             </div>
             <div className="right-header">
-                <Plus />
                 <p
-                    className="underline mr-2"
+                    className="rounded-full px-4 py-2 $ bg-black text-white text-sm md:text-bas"
                     onClick={() => {
                         router.push('/create');
                     }}
