@@ -27,7 +27,10 @@ export const Header = () => {
 
     return (
         <header className="m-3 header">
-            <div className="left-header">
+            <div
+                className="left-header cursor-pointer"
+                onClick={() => router.push('/')}
+            >
                 <div className="logo-container">
                     <Image
                         src={Logo}
@@ -42,7 +45,8 @@ export const Header = () => {
             </div>
             <div className="right-header">
                 <Plus />
-                <p className="underline mr-2"
+                <p
+                    className="underline mr-2"
                     onClick={() => {
                         router.push('/create');
                     }}
@@ -72,11 +76,7 @@ export const Header = () => {
                             forceMount
                         >
                             <>
-                                <DropdownMenuLabel>Hi, user!</DropdownMenuLabel>
-                                <DropdownMenuItem>
-                                    <FileText className="mr-2 h-4 w-4" />
-                                    <span>View Submissions</span>
-                                </DropdownMenuItem>
+                                <DropdownMenuLabel>Eye Eagle</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem
                                     onClick={() => auth.signOut()}
