@@ -10,7 +10,7 @@ export default function Hashtag({ text, onClick, isSelected }) {
                     isSelected
                         ? 'bg-black text-white border-black'
                         : 'bg-white text-black border-[#cfcfd0]'
-                }`}
+                } text-sm md:text-base`}
             >
                 #{text}
             </button>

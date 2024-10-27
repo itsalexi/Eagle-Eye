@@ -84,7 +84,6 @@
 .search{
     width: 30%;
     height: 100%;
-    margin-left: 15em;
 }
 .front-create{
     display: flex;
@@ -96,6 +95,10 @@
     font-size: 2.5em;
     font-weight: bold;
 }
+.hashtags-section{
+    display: flex;
+    flex-direction: row;
+}
 .tags{
     display: flex;
     flex-direction: column;
@@ -105,6 +108,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 95%;
+    margin-bottom: 2rem;
 }
 .trending-tags > p{
     margin-left: 1rem; 

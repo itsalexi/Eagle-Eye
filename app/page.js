@@ -37,7 +37,7 @@ export default function Home() {
 
     return (
         <div className="flex flex-row ml-5 home-page">
-            <div className="flex flex-row h-20 bg-blue">
+            <div className=" w-[95%] flex md:flex-row flex-col justify-between">
                 <div className="trending-hashtags">
                     <TrendingHashtags
                         amount={6}
@@ -45,7 +45,7 @@ export default function Home() {
                         selectedHashtags={selectedHashtags}
                     />
                 </div>
-                <div className="search">
+                <div className=" w-[90%] md:w-[30%] mx-auto">
                     <SearchTags
                         selectedTags={selectedHashtags}
                         onTagsChange={handleSearchTagsChange}

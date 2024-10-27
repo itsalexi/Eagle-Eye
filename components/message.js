@@ -26,7 +26,7 @@ export default function Message({ msgObject, highlighted }) {
     };
 
     return (
-        <div className="w-full max-w-4xl rounded-2xl mb-3 ml-10 border-2 border-[#cfcfd0] p-6">
+        <div className="w-full max-w-4xl rounded-2xl mb-3 md:ml-10 ml-0 border-2 border-[#cfcfd0] p-6">
             <div className="message-top">
                 <div className="mb-2">
                     <span className="text-sm text-gray-500">
