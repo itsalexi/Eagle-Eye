@@ -34,6 +34,8 @@ export const Header = () => {
                 <div className="logo-container">
                     <Image
                         src={Logo}
+                        width={100}
+                        height={100}
                         alt="logo"
                     ></Image>
                 </div>

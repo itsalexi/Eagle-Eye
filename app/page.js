@@ -55,7 +55,7 @@ export default function Home() {
             </div>
 
             <div className="messages-list">
-                <p className="text-6xl font-bold mb-[1rem]"> Recents</p>
+                <p className="text-6xl font-bold mb-[1rem] mt-[1.5rem]"> Recents</p>
                 {loading ? (
                     <p>Loading</p>
                 ) : (
