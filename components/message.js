@@ -6,7 +6,7 @@ export default function Message({ msgObject, highlighted }) {
 
     const formatTimestamp = (timestamp) => {
         const now = new Date();
-        const postDate = new Date(timestamp);
+        const postDate = new Date(timestamp.seconds * 1000);
         const diffSeconds = Math.floor((now - postDate) / 1000);
 
         const formatUnit = (value, unit) =>
