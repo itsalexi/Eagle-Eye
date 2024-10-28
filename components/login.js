@@ -21,7 +21,7 @@ export default function LoginBox() {
                 router.push('/');
             }
         } catch (err) {
-            setError(err);
+            setError(err.toString());
         }
     };
 
