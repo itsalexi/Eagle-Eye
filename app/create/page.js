@@ -92,19 +92,19 @@ export default function Create() {
     };
 
     return user ? (
-        <div className="front-create">
+        <div className="md:ml-[2rem] ml-[1rem]">
             <div className="create-title">Create Post</div>
             <div className="tags">
                 <p>Add Tags...</p>
-                <div className="trending-tags">
-                    <div className="trending-hashtags">
+                <div className="w-[100%] flex md:flex-row flex-col justify-between">
+                    <div className="trending-hashtags flex gap-2 overflow-x-auto whitespace-nowrap">
                         <TrendingHashtags
                             amount={6}
                             onClick={handleHashtag}
                             selectedHashtags={selectedHashtags}
                         />
                     </div>
-                    <div className="search-create">
+                    <div className="w-[90%] md:w-[30%] mx-auto">
                         <SearchTags
                             selectedTags={selectedHashtags}
                             onTagsChange={handleSearchTagsChange}
