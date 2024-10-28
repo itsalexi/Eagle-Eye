@@ -12,12 +12,11 @@ import {
     DropdownMenuTrigger,
     DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
-import { LogOut, User, FileText } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { Button } from './ui/button';
 import { auth } from '@/lib/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
-import { Plus } from 'lucide-react';
 
 export const Header = () => {
     const [user] = useAuthState(auth);
