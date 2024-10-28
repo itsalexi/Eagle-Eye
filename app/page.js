@@ -39,7 +39,7 @@ export default function Home() {
         <div className="flex flex-row ml-5 home-page">
             <p className='text-[#cfcfd0] ml-2'>Trending Tags...</p>
             <div className=" w-[95%] flex md:flex-row flex-col justify-between">
-                <div className="trending-hashtags">
+                <div className="trending-hashtags flex gap-2 overflow-x-auto whitespace-nowrap">
                     <TrendingHashtags
                         amount={6}
                         onClick={handleHashtag}
