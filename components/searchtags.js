@@ -31,4 +31,4 @@ export default function SearchTags({ selectedTags, onTagsChange }) {
     );
 }
 
-const tags = ['SEC A', 'Gonz', 'Xavier', 'Iggys', 'Blue Eagle Gym', 'MVP'];
+const tags = ['SEC A', 'Gonz', 'Xavier', 'Iggys', 'Blue Eagle Gym', 'MVP', 'Faura', 'SEC walk','ISO','Loverslane', 'A Shop','Riz lib','Macci','SOM'];
